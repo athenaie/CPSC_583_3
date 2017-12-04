@@ -39,11 +39,11 @@ var svg = d3.select("body")
 			.attr("width", width)
 			.attr("height", height);
 
-// append tooltip div
+// Append Div for tooltip to SVG
 var div = d3.select("body")
-		    .append("div")
-    		.attr("class", "tooltip")
-    		.style("opacity", 0);
+      .append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
 
 // load in obesity data
 d3.csv("data/obesity.csv", function(data) {
@@ -88,8 +88,22 @@ svg.selectAll("path")
   .style("fill", function(d){
     var value = d.properties.overweight;
     return colour(value);
-  // tooltip code goes here
-});
+})
+.on("mouseover", function(d) {
+    div.transition()
+         .duration(1000)
+         .style("opacity", .9);
+    div.text(d.properties.name)
+         .style("left", "0px")
+         .style("top", "550px");
+})
+
+  // fade out tooltip on mouse out
+  .on("mouseout", function(d) {
+      div.transition()
+         .duration(500)
+         .style("opacity", 0);
+  });
 
 // legend
 var legend = d3.select("body").append("svg")
