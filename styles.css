@@ -1,0 +1,23 @@
+div.tooltip{
+  position: absolute;
+  text-align: center;
+  padding: 2px;
+  display:inline-block;
+  background: white;
+  border: 0px;
+  border-radius: 15px;
+}
+
+body{
+  font: 12px sans-serif;
+}
+
+.legend {
+  position: absolute;
+  left: 800px;
+  right: 350px;
+}
+
+path:hover {
+	fill-opacity: .10;
+}
