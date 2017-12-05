@@ -108,6 +108,7 @@ svg.selectAll("path")
   .enter()
   .append("path")
   .attr("d", path)
+  .attr("class", "state")
   .style("stroke", "#fff")
 	.style("stroke-width", "2")
   .style("fill", function(d){
@@ -117,7 +118,7 @@ svg.selectAll("path")
 .on("mouseover", function(d) {
     // d3.select(this).style("fill", d.properties.colour);
     div.transition()
-         .duration(1000)
+         .duration(500)
          .style("opacity", .9);
     div.html("<h2>" + d.properties.name + "</h2> <div class=percent><h3>Percent overweight or obese</h3><h4>" + d.properties.overweightpercent + "%</h4></div><div class=cereal><h3>Favourite cereal</h3><h4>" + d.properties.cereal + "</h4></div>")
          .style("left", "0px")
