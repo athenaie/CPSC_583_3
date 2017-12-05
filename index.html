@@ -8,10 +8,10 @@
 
 <!-- load the d3.js library -->
 <script src="https://d3js.org/d3.v3.min.js"></script>
+<!-- load the parcoords library (from https://github.com/syntagmatic/parallel-coordinates#parallel-coordinates) -->
 <script src="d3.parcoords.js"></script>
 
 <div id="example" class="parcoords"></div>
-
 <div id="note">Note: All nutrition information is for one cup of cereal.</div>
 
 <script>
@@ -19,6 +19,9 @@
 // set width and height
 var width = 600;
 var height = 400;
+
+// Map projection and tooltip modified from map example at http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922
+// Map data from https://gist.github.com/michellechandra/0b2ce4923dc9b5809922#file-us-states-json
 
 // D3 Projection
 var projection = d3.geo.albersUsa()
@@ -33,11 +36,6 @@ var projection = d3.geo.albersUsa()
            		  	 .projection(projection);
 // Define colour output
 var colour = d3.scale.linear()
-   			  .range(["hsl(0, 100%, 80%)","hsl(0, 100%, 70%)","hsl(0, 100%, 60%)","hsl(0, 100%, 50%)","hsl(0, 100%, 40%)","hsl(0, 100%, 30%)","hsl(0, 100%, 20%)","hsl(0, 100%, 10%)"]);
-
-
-
-var coordColour = d3.scale.linear()
    			  .range(["hsl(0, 100%, 80%)","hsl(0, 100%, 70%)","hsl(0, 100%, 60%)","hsl(0, 100%, 50%)","hsl(0, 100%, 40%)","hsl(0, 100%, 30%)","hsl(0, 100%, 20%)","hsl(0, 100%, 10%)"]);
 
 // set the ranges for the legend
@@ -116,7 +114,6 @@ svg.selectAll("path")
     return colour(value);
 })
 .on("mouseover", function(d) {
-    // d3.select(this).style("fill", d.properties.colour);
     div.transition()
          .duration(500)
          .style("opacity", .9);
@@ -159,6 +156,7 @@ var legend = d3.select("body").append("svg")
   });
 });
 
+// parallel coordinates build using the parcoords library (https://github.com/syntagmatic/parallel-coordinates#parallel-coordinates)
 var parcoords = d3.parcoords()("#example")
 
 d3.csv('data/cereal.csv', function(data) {
