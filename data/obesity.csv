@@ -1,52 +1,52 @@
-state,percent,value,cereal
-Alabama,66.6,6,Special K
-Alaska,65.1,5,Shredded Wheat
-Arizona,62.6,4,Rice Krispies
-Arkansas,65.6,5,Raisin Bran
-California,59,2,Special K
-Colorado,55.7,0,Cinnamon Toast Crunch
-Connecticut,59.2,2,Cinnamon Toast Crunch
-Delaware,65,5,Vanilla Coconut
-District of Columbia,55.3,0,Special K
-Florida,62.1,4,Ancient Grains Cheerios
-Georgia,65,5,Ancient Grains Cheerios
-Hawaii,56.8,1,Great Grains
-Idaho,63.1,4,Quaker Oatmeal Squares
-Illinois,63,4,Special K
-Indiana,63.2,4,All Bran
-Iowa,64.7,5,Special K
-Kansas,63.8,4,Rice Krispies
-Kentucky,69.1,7,Fiber One
-Louisiana,65.2,5,Cocoa Crispies
-Maine,62.9,4,Oreo O's
-Maryland,62.7,4,Fiber One
-Massachusetts,58.9,2,Thin Mint Cereal
-Michigan,64.3,5,Special K
-Minnesota,62,4,Cinnamon Toast Crunch
-Mississippi,68.1,7,Thin Mint Cereal
-Missouri,63.3,4,Nature Valley
-Montana,61.8,3,Kashi
-Nebraska,64.7,5,Cap'n'Crunch
-Nevada,63,4,Cascade Farms
-New Hampshire,61.8,3,Rice Krispies
-New Jersey,62.3,4,Ancient Grains Cheerios
-New Mexico,60.8,3,Special K
-New York,61.9,3,Special K
-North Carolina,64.6,5,Fiber One
-North Dakota,64.9,5,Oreo O's
-Ohio,63.5,4,Ancient Grains Cheerios
-Oklahoma,65.1,5,Special K
-Oregon,62,4,Honey Nut Cheerios
-Pennsylvania,62.7,4,Special K
-Rhode Island,60.8,3,Rice Krispies
-South Carolina,65.3,5,Special K
-South Dakota,65.5,5,Cocoa Crispies
-Tennessee,67.4,6,Cheerios
-Texas,65.8,5,Special K
-Utah,58,2,Special K
-Vermont,58.8,2,Special K
-Virginia,61.9,3,Special K
-Washington,62.1,4,Maypo
-West Virginia,68,7,Count Chocula
-Wisconsin,62.3,4,Fiber One
-Wyoming,62.2,4,Ancient Grains Cheerios
+state,percent,value,cereal,colour
+Alabama,66.6,6,Special K,grey
+Alaska,65.1,5,Shredded Wheat,brown
+Arizona,62.6,4,Rice Krispies,navy
+Arkansas,65.6,5,Raisin Bran,teal
+California,59,2,Special K,grey
+Colorado,55.7,0,Cinnamon Toast Crunch,orange
+Connecticut,59.2,2,Cinnamon Toast Crunch,orange
+Delaware,65,5,Vanilla Coconut,grey
+District of Columbia,55.3,0,Special K,grey
+Florida,62.1,4,Ancient Grains Cheerios,green
+Georgia,65,5,Ancient Grains Cheerios,green
+Hawaii,56.8,1,Great Grains,magenta
+Idaho,63.1,4,Quaker Oatmeal Squares,olive
+Illinois,63,4,Special K,grey
+Indiana,63.2,4,All Bran,red
+Iowa,64.7,5,Special K,grey
+Kansas,63.8,4,Rice Krispies,navy
+Kentucky,69.1,7,Fiber One,white
+Louisiana,65.2,5,Cocoa Crispies,white
+Maine,62.9,4,Oreo O's,white
+Maryland,62.7,4,Fiber One,white
+Massachusetts,58.9,2,Thin Mint Cereal,hotpink
+Michigan,64.3,5,Special K,grey
+Minnesota,62,4,Cinnamon Toast Crunch,orange
+Mississippi,68.1,7,Thin Mint Cereal,hotpink
+Missouri,63.3,4,Nature Valley,white
+Montana,61.8,3,Kashi,white
+Nebraska,64.7,5,Cap'n'Crunch,yellow
+Nevada,63,4,Cascade Farms,white
+New Hampshire,61.8,3,Rice Krispies,navy
+New Jersey,62.3,4,Ancient Grains Cheerios,green
+New Mexico,60.8,3,Special K,grey
+New York,61.9,3,Special K,grey
+North Carolina,64.6,5,Fiber One,white
+North Dakota,64.9,5,Oreo O's,white
+Ohio,63.5,4,Ancient Grains Cheerios,green
+Oklahoma,65.1,5,Special K,grey
+Oregon,62,4,Honey Nut Cheerios,palegreen
+Pennsylvania,62.7,4,Special K,grey
+Rhode Island,60.8,3,Rice Krispies,navy
+South Carolina,65.3,5,Special K,grey
+South Dakota,65.5,5,Cocoa Crispies,white
+Tennessee,67.4,6,Cheerios,blue
+Texas,65.8,5,Special K,grey
+Utah,58,2,Special K,grey
+Vermont,58.8,2,Special K,grey
+Virginia,61.9,3,Special K,grey
+Washington,62.1,4,Maypo,lime
+West Virginia,68,7,Count Chocula,purple
+Wisconsin,62.3,4,Fiber One,white
+Wyoming,62.2,4,Ancient Grains Cheerios,green

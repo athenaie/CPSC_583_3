@@ -12,6 +12,8 @@
 
 <div id="example" class="parcoords"></div>
 
+<div id="note">Note: All nutrition information is for one cup of cereal.</div>
+
 <script>
 
 // set width and height
@@ -31,6 +33,11 @@ var projection = d3.geo.albersUsa()
            		  	 .projection(projection);
 // Define colour output
 var colour = d3.scale.linear()
+   			  .range(["hsl(0, 100%, 80%)","hsl(0, 100%, 70%)","hsl(0, 100%, 60%)","hsl(0, 100%, 50%)","hsl(0, 100%, 40%)","hsl(0, 100%, 30%)","hsl(0, 100%, 20%)","hsl(0, 100%, 10%)"]);
+
+
+
+var coordColour = d3.scale.linear()
    			  .range(["hsl(0, 100%, 80%)","hsl(0, 100%, 70%)","hsl(0, 100%, 60%)","hsl(0, 100%, 50%)","hsl(0, 100%, 40%)","hsl(0, 100%, 30%)","hsl(0, 100%, 20%)","hsl(0, 100%, 10%)"]);
 
 // set the ranges for the legend
@@ -70,6 +77,9 @@ for (var i = 0; i < data.length; i++) {
   // Get the fave cereal
   var dataCereal = data[i].cereal;
 
+  // Get the alternate colour
+  var dataColour = data[i].colour;
+
   // Find the corresponding state in GeoJSON
   for (var j = 0; j < json.features.length; j++)  {
   	var jsonState = json.features[j].properties.name;
@@ -82,6 +92,8 @@ for (var i = 0; i < data.length; i++) {
     json.features[j].properties.overweightpercent = dataPercent;
 
     json.features[j].properties.cereal = dataCereal;
+
+    json.features[j].properties.colour = dataColour;
 
   	// Stop looking through the JSON
   	break;
@@ -103,12 +115,15 @@ svg.selectAll("path")
     return colour(value);
 })
 .on("mouseover", function(d) {
+    // d3.select(this).style("fill", d.properties.colour);
     div.transition()
          .duration(1000)
          .style("opacity", .9);
     div.html("<h2>" + d.properties.name + "</h2> <div class=percent><h3>Percent overweight or obese</h3><h4>" + d.properties.overweightpercent + "%</h4></div><div class=cereal><h3>Favourite cereal</h3><h4>" + d.properties.cereal + "</h4></div>")
          .style("left", "0px")
-         .style("top", "450px");
+         .style("top", "460px")
+         .style("border-bottom-color", d.properties.colour)
+         .style("border-top-color", colour(d.properties.overweightvalue));
 })
 
   // fade out tooltip on mouse out
@@ -143,6 +158,51 @@ var legend = d3.select("body").append("svg")
   });
 });
 
+var parcoords = d3.parcoords()("#example")
+
+d3.csv('data/cereal.csv', function(data) {
+  parcoords
+  .data(data)
+  .color(function(d){
+    if (d.Brand == "All-Bran")
+      return "red";
+    else if (d.Brand == "Ancient Grains Cheerios")
+      return "green";
+    else if (d.Brand == "Cap'n'Crunch")
+      return "yellow";
+    else if (d.Brand == "Cheerios")
+      return "blue";
+    else if (d.Brand == "Cinnamon Toast Crunch")
+      return "orange";
+    else if (d.Brand == "Count Chocula")
+      return "purple";
+    else if (d.Brand == "Fiber One")
+      return "cyan";
+    else if (d.Brand == "Honey Nut Cheerios")
+      return "palegreen";
+    else if (d.Brand == "Great Grains")
+      return "magenta";
+    else if (d.Brand == "Maypo")
+      return "lime";
+    else if (d.Brand == "Quaker Oat Squares")
+      return "olive";
+    else if (d.Brand == "Raisin Bran")
+      return "teal";
+    else if (d.Brand == "Rice Krispies")
+      return "navy";
+    else if (d.Brand == "Shredded Wheat")
+      return "brown";
+    else if (d.Brand == "Special K")
+      return "grey";
+    else if (d.Brand == "Thin Mint Cereal")
+      return "hotpink";
+    else if (d.Brand == "Vanilla Coconut")
+      return "mint";
+  })
+  .margin({ top: 50, left: 150, bottom: 12, right: 0 })
+  .render()
+  .createAxes()
+});
 </script>
 
 </body>
